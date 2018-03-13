@@ -187,7 +187,7 @@ elif stat_arr[len(df)-1] == -1:
     profit+=price_b - clo[len(df)-1]
 
 print(profit)
-np.savetxt('hw1_data/output.csv', act_arr, fmt = '%d')
+np.savetxt('output.csv', act_arr, fmt = '%d')
     
 
 
