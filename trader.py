@@ -19,7 +19,7 @@ title = [
         'Close',
         ]
 df = pd.DataFrame()
-dtr = pd.read_csv('hw1_data/testing_data.csv', header=None, names = title)
+dtr = pd.read_csv('testing_data.csv', header=None, names = title)
 df = pd.concat([dtr, df])
 
 op, hi, lo, clo = df.iloc[:,0], df.iloc[:,1], df.iloc[:,2], df.iloc[:,3]
