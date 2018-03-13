@@ -10,8 +10,8 @@ Using "Moving average" to accomplish the goal
 * If short-term average crosses long-term and going downwards, it`s time to sell
 * If short-term average crosses long-term and going upwards, it`s time to buy
 * Moving Average: 
-**  5, 20, 60, 180 days
-**  to calculate the average from past days
+* * 5, 20, 60, 180 days
+* * to calculate the average from past days
 
 version 1 is only considered 5-days line with other lines 
 * 'sig1' 'sig2' 'sig3' are three signals, which means two MA lines crossed
