@@ -10,7 +10,7 @@ from pandas import DataFrame, Series
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib.finance import candlestick_ohlc
+#from matplotlib.finance import candlestick_ohlc
 
 title = [
         'Open',
@@ -19,6 +19,7 @@ title = [
         'Close',
         ]
 df = pd.DataFrame()
+dtr = pd.read_csv('training_data.csv', header=None, names = title)
 dtr = pd.read_csv('testing_data.csv', header=None, names = title)
 df = pd.concat([dtr, df])
 
@@ -31,7 +32,7 @@ while x < len(df):
     x+=1
 
 fig, ax1 = plt.subplots()
-candlestick_ohlc(ax1, ohlc, width=0.6, colorup='r', colordown='black')
+#candlestick_ohlc(ax1, ohlc, width=0.6, colorup='r', colordown='black')
 
 
 upline = (df.High - df[['Open','Close']].max(axis=1)).to_frame()
