@@ -12,6 +12,25 @@ import pandas as pd
 import matplotlib.pyplot as plt
 #from matplotlib.finance import candlestick_ohlc
 
+
+if __name__ == '__main__':
+    # You should not modify this part.
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--training',
+                       default='training_data.csv',
+                       help='input training data file name')
+    parser.add_argument('--testing',
+                        default='testing_data.csv',
+                        help='input testing data file name')
+    parser.add_argument('--output',
+                        default='output.csv',
+                        help='output file name')
+    args = parser.parse_args()
+
+
+
 title = [
         'Open',
         'High',
@@ -19,8 +38,8 @@ title = [
         'Close',
         ]
 df = pd.DataFrame()
-dtr = pd.read_csv('training_data.csv', header=None, names = title)
-dtr = pd.read_csv('testing_data.csv', header=None, names = title)
+dtr = pd.read_csv(args.training, header=None, names = title)
+dtr = pd.read_csv(args.testing, header=None, names = title)
 df = pd.concat([dtr, df])
 
 op, hi, lo, clo = df.iloc[:,0], df.iloc[:,1], df.iloc[:,2], df.iloc[:,3]
@@ -188,22 +207,7 @@ elif stat_arr[len(df)-1] == -1:
     profit+=price_b - clo[len(df)-1]
 
 print(profit)
-np.savetxt('output.csv', act_arr, fmt = '%d')
+np.savetxt(args.output, act_arr, fmt = '%d')
     
 
 
-if __name__ == '__main__':
-    # You should not modify this part.
-    import argparse
-
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--training',
-                       default='training_data.csv',
-                       help='input training data file name')
-    parser.add_argument('--testing',
-                        default='testing_data.csv',
-                        help='input testing data file name')
-    parser.add_argument('--output',
-                        default='output.csv',
-                        help='output file name')
-    args = parser.parse_args()
